@@ -1,0 +1,22 @@
+{
+  "name": "nodejs_course",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "nodemon",
+    "task1": "nodemon ./src/HT1/task1/index.js",
+    "task2": "nodemon ./src/HT1/task2/index.js",
+    "babel1": "nodemon --exec babel-node ./src/HT1/task1/index.js",
+    "babel2": "nodemon --exec babel-node ./src/HT1/task2/index.js"
+  },
+  "author": "Artsiom Papou",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "csvtojson": "^2.0.10",
+    "nodemon": "^2.0.4"
+  }
+}
