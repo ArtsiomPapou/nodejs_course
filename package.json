@@ -5,11 +5,9 @@
   "scripts": {
     "test": "nodemon",
     "lint": "eslint --fix src/**",
-    "task1": "nodemon ./src/HT1/task1/index.js",
-    "task2": "nodemon ./src/HT1/task2/index.js",
-    "babel1": "nodemon --exec babel-node ./src/HT1/task1/index.js",
-    "babel2": "nodemon --exec babel-node ./src/HT1/task2/index.js",
-    "start": "nodemon --exec babel-node ./src/HT2/app.js"
+    "start": "nodemon --exec babel-node ./src/HT2/app.js",
+    "task1": "nodemon --exec babel-node ./src/HT1/task1/index.js",
+    "task2": "nodemon --exec babel-node ./src/HT1/task2/index.js"
   },
   "author": "Artsiom Papou",
   "license": "ISC",

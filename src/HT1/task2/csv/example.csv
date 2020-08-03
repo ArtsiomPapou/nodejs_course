@@ -1,4 +1,6 @@
-Item,Cost,Sold,Profit
-Keyboard,$10.00,$16.00,$6.00
-Monitor,$80.00,$120.00,$40.00
-Mouse,$5.00,$7.00,$2.00
+Book,Author,Amount,Price
+The Compound Effect,Darren Hardy,5,9.48
+The 7 Habits of Highly Effective People,Stephen R. Covey,4,23.48
+The Miracle Morning,Hal Elrod,10,21.34
+Influence: The Psychology of Persuasion,Robert B. Cialdini,4,12.99
+The ONE Thing,Gary Keller,1,11.18
