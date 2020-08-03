@@ -4,10 +4,8 @@
   "description": "",
   "scripts": {
     "test": "nodemon",
-    "task1": "nodemon ./src/HT1/task1/index.js",
-    "task2": "nodemon ./src/HT1/task2/index.js",
-    "babel1": "nodemon --exec babel-node ./src/HT1/task1/index.js",
-    "babel2": "nodemon --exec babel-node ./src/HT1/task2/index.js"
+    "task1": "nodemon --exec babel-node ./src/HT1/task1/index.js",
+    "task2": "nodemon --exec babel-node ./src/HT1/task2/index.js"
   },
   "author": "Artsiom Papou",
   "license": "ISC",
