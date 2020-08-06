@@ -1,15 +1,16 @@
 import express from 'express';
-import {client} from 'pg';
-import {DB_VARS} from './configs/db';
+import {Client} from 'pg';
+import {db_conf} from './configs/db';
 import userRoute from './routes/user';
 import bodyParser from 'body-parser';
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+const client = new Client(db_conf)
 app.listen(PORT);
 
-client.connect(DB_VARS.DATABASE_URL, (error, client, done) => {
-  console.log(client)
+client.connect((error ) => {
+  if(error) console.log(error);
+  console.log('db connected');
 });
 
 app.use(bodyParser.urlencoded({
