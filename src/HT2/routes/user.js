@@ -1,5 +1,4 @@
 import express from 'express';
-import {uuid} from 'uuidv4';
 import collection from '../classes/UserCollection';
 import User from '../classes/User';
 import {userSchemes} from '../schemes/User';
@@ -17,6 +16,8 @@ router.get('/autosuggest/', (req, res) => {
 
     res.json(fondUsers);
     console.log('Users by autosuggest');
+  } else {
+    res.status(500).send(`Params are broken`);
   }
 });
 
@@ -25,25 +26,25 @@ router.get('/:id', (req, res) => {
 
   if (user) {
     res.json(user);
-  } else res.send(`User with ${req.params.id} doesn't exist`);
+  } else {
+    res.status(500).send(`User with ${req.params.id} doesn't exist`);
+  }
 });
 
 router.post('/', validateSchema(userSchemes.addUser), (req, res) => {
-  const data = req.body;
-  data.id = uuid();
+  const {login, password, age, isDeleted} = req.body;
   const user = new User({
-    id: data.id,
-    login: data.login,
-    password: data.password,
-    age: data.age,
-    isDeleted: data.isDeleted
+    login,
+    password,
+    age,
+    isDeleted
   });
   collection.createItem(user);
 
   res.json({
     status: 'success',
     message: 'User created successfully',
-    data: {id: data.id}
+    data: {id: user.id}
   });
 });
 
@@ -68,6 +69,8 @@ router.delete('/:id', (req, res) => {
     const success = collection.deleteItem(id);
     if (success) res.json({msg: `User ${id} deleted`});
     else res.send(`User with ${id} doesn't exist`);
+  } else {
+    res.status(500).send(`User with ${id} doesn't exist`);
   }
 });
 
